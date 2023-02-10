@@ -70,19 +70,20 @@ export class ChatGPTPool {
         proxyServer: config.openAIProxy,
       });
       try {
-        await AsyncRetry(
-          async () => {
-            await chatGpt.initSession();
-          },
-          { retries: 3 }
-        );
+        // await AsyncRetry(
+        //   async () => {
+        //   },
+        //   { retries: 3 }
+        // );
+        await chatGpt.initSession();
+
         chatGPTPools.push({
           chatGpt: chatGpt,
           account: account,
         });
-      } catch {
+      } catch(error) {
         console.error(
-          `Try init account: ${account.email} failed, remove it from pool`
+          `Try init account: ${account.email} failed, remove it from pool`, error
         );
       }
     }
