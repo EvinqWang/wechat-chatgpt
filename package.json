@@ -6,6 +6,7 @@
   "export": "dist/main.js",
   "scripts": {
     "dev": "nodemon --exec node --watch config.yaml --loader ts-node/esm src/main.ts",
+    "dev:openai": "nodemon --exec node --watch config.yaml --loader ts-node/esm src/openai.ts",
     "build": "tsc"
   },
   "author": "",
@@ -15,6 +16,7 @@
     "chatgpt": "^3.5.2",
     "dotenv": "^16.0.3",
     "execa": "^6.1.0",
+    "openai": "^3.1.0",
     "qrcode": "^1.5.1",
     "uuid": "^9.0.0",
     "wechaty": "^1.20.2",
