@@ -13,32 +13,33 @@
   </a>
 </p>
 
-> Use ChatGPT On Wechat via wechaty  
-English | [中文文档](README_ZH.md)
+> Use ChatGPT On Wechat via wechaty
+> English | [中文文档](README_ZH.md)
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/BHJD6L?referralCode=FaJtD_)  
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/BHJD6L?referralCode=FaJtD_)
 
 If you don't have a server or want to experience rapid deployment, you can use Railway to do so, see [Usage with Railway](#usage-with-railway).
 
 ### Update Decomber 27, 2022
+
 Using railway & docker deployment, there may be problems that cannot be solved, we are working on it.
 
 ### Update December 20, 2022
 
-Thanks @transitive-bullshit, The ChatGPT API automates the work.  
-You should use password & username to login, and config [CAPTCHAs](#CAPTCHAS).  
+Thanks @transitive-bullshit, The ChatGPT API automates the work.
+You should use password & username to login, and config [CAPTCHAs](#CAPTCHAS).
 ⚠️ There may be a problem with the Docker image because I don't have an X86 device and Qume doesn't work.
 
 ## 🌟 Feature
 
-- [x] Use ChatGPT On Wechat via wechaty
-- [x] Support OpenAI Accounts Pool
-- [x] Support use proxy to login
-- [x] Add conversation Support
-- [x] Add Dockerfile
-- [x] Publish to Docker.hub
-- [x] Add Railway deploy
-- [x] Auto Reload OpenAI Accounts Pool
+- [X] Use ChatGPT On Wechat via wechaty
+- [X] Support OpenAI Accounts Pool
+- [X] Support use proxy to login
+- [X] Add conversation Support
+- [X] Add Dockerfile
+- [X] Publish to Docker.hub
+- [X] Add Railway deploy
+- [X] Auto Reload OpenAI Accounts Pool
 - [X] Add sendmessage retry for 429/503
 
 ## Use with docker in Linux(recommended)
@@ -83,6 +84,7 @@ docker logs -f wechat-chatgpt
 ```sh
 npm install
 ```
+
 > NodeJS Version >= 18.0.0
 
 ## Config
@@ -144,6 +146,7 @@ So you should config `NOPECHA_KEY` or `CAPTCHA_TOKEN` in your Environment Variab
 ```sh
 npm run dev
 ```
+
 ## Usage with Railway
 
 [Railway](https://railway.app/) is a deployment platform where you can provision infrastructure, develop with that infrastructure locally, and then deploy to the cloud.This section describes how to quickly deploy a wechat-chatgpt project using Railway.
@@ -161,11 +164,8 @@ After some validation is complete, you can begin the deployment.You will see the
 Some environment variables need to be configured:
 
 - **CHAT_GPT_EMAIL** : Your OpenAI Account email.
-
 - **CHAT_GPT_PASSWORD** : Your OpenAI Account password.
-
 - **CHAT_GPT_RETRY_TIMES** : The number of times to retry when the OpenAI API returns 429 or 503.
-
 - **CHAT_PRIVATE_TRIGGER_KEYWORD** : If you hope only some keywords can trigger chatgpt on private chat, you can set it.
 
 Click the Deploy button and your service will start deploying shortly.The following interface appears to indicate that the deployment has begun:
@@ -197,11 +197,21 @@ If you are logging in for the first time, then you need to scan the qrcode.
   <img src="https://contrib.rocks/image?repo=fuergaosi233/wechat-chatgpt" />
 </a>
 
-
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fuergaosi233/wechat-chatgpt/issues).
+Contributions, issues and feature requests are welcome!`<br />`Feel free to check [issues page](https://github.com/fuergaosi233/wechat-chatgpt/issues).
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
+## config
+
+![image-20230210131008945](https://evinqwang-1258959739.cos.ap-guangzhou.myqcloud.com//docs/image/common/image-20230210131008945.png)
+
+
+## WSL
+
+- 安装相应软件 google-chrome-for-linux
+
+https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux
