@@ -1,20 +1,23 @@
 import * as dotenv from "dotenv";
 import { Configuration, OpenAIApi } from "openai";
 dotenv.config();
-const { token, sessionToken } = process.env;
+const { OPENAI_API_KEY, ORGANIZATION_KEY } = process.env;
 
+export class OpenAiChatGPT {
+    openai: OpenAIApi;
+    constructor() {
+        const configuration = new Configuration({
+            apiKey: OPENAI_API_KEY,
+            organization: ORGANIZATION_KEY
+        });
+        this.openai = new OpenAIApi(configuration);
+        console.log(new Date().toLocaleString(), "--openai has been initial...");
+    }
 
-const configuration = new Configuration({
-    apiKey: "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",
-});
-const openai = new OpenAIApi(configuration);
-
-console.log(new Date().toLocaleString(), "--openai has been initial...");
-
-export default async function chatGpt(msg: string): Promise<string>{
-    return new Promise(async (resolve, reject) => {
+    async sendMessage(msg: string, talkerId: string): Promise<string> {
+        console.log('talkerId>>>', talkerId);
         try {
-            const response = await openai.createCompletion({
+            const response = await this.openai.createCompletion({
                 model: "text-davinci-003",
                 prompt: "Human: " + `${msg}`,
                 temperature: 0.9,
@@ -26,10 +29,11 @@ export default async function chatGpt(msg: string): Promise<string>{
             });
             const text = response.data.choices[0].text as string
             console.log(text);
-            resolve(text)
+            return text
         } catch (err) {
             console.log(err);
-            reject(err)
+            return '请重试！！'
         }
-    })
+    }
 }
+

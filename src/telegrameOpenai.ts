@@ -1,7 +1,9 @@
 import * as dotenv from "dotenv";
 import { Configuration, OpenAIApi } from "openai";
 import TelegramBot from "node-telegram-bot-api";
-import chatGpt from "./openai.js";
+import { OpenAiChatGPT } from "./openai.js";
+
+
 dotenv.config();
 const { token, sessionToken } = process.env;
 
@@ -40,6 +42,8 @@ bot.on("uncaughtException" as any, (error: any) => {
     console.log("STACK:", error.stack);
 });
 
+const openAiChatGPT = new OpenAiChatGPT()
+
 async function msgHandler(msg: any) {
     switch (true) {
         case msg.text.indexOf("/start") === 0:
@@ -50,7 +54,7 @@ async function msgHandler(msg: any) {
             break;
         default:
             try {
-                const response = await chatGpt(msg.text);
+                const response = await openAiChatGPT.sendMessage(msg.text, '');
                 bot.sendMessage(msg.chat.id, response, { parse_mode: "Markdown" });
             } catch (error) {
                 bot.sendMessage(msg.chat.id, "😭出错了，我需要休息一下。");

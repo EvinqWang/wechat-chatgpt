@@ -1,0 +1,2 @@
+- openai token申请 https://platform.openai.com/docs/quickstart/build-your-application
+-

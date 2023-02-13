@@ -4,3 +4,4 @@ chatGPTAccountPool:
     isGoogleLogin: false
 chatPrivateTiggerKeyword: ""
 openAIProxy: ""
+ORGANIZATION_KEY: "org-bWZOCZomGfod5RK1ZQGmnFtB"

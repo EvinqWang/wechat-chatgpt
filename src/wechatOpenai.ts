@@ -1,7 +1,11 @@
 import { WechatyBuilder } from "wechaty";
 import QRCode from "qrcode";
-import chatGpt from "./openai.js";
+import { WechatChatGPTBot } from "./wechatChatGPTBot.js";
 
+// 微信智能消息机器人
+const wechatChatGPTBot = new WechatChatGPTBot() 
+
+// 微信代理服务器
 const bot = WechatyBuilder.build({
     name: "wechat-assistant", // generate xxxx.memory-card.json and save login data for the next login
     puppetOptions: {
@@ -33,8 +37,7 @@ bot.on("message", async (message: any) => {
     }
     try {
         console.log(`Message: ${message}`);
-        const response = await chatGpt(message);
-        console.log('response>>>>', response);
+        await wechatChatGPTBot.onMessage(message);
     } catch (e) {
         console.error(e);
     }
