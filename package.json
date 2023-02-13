@@ -6,7 +6,8 @@
   "export": "dist/main.js",
   "scripts": {
     "dev": "nodemon --exec node --watch config.yaml --loader ts-node/esm src/main.ts",
-    "dev:openai": "nodemon --exec node --watch config.yaml --loader ts-node/esm src/openai.ts",
+    "dev:wechatOpenai": "nodemon --exec node --watch config.yaml --loader ts-node/esm src/wechatOpenai.ts",
+    "dev:telegrameOpenai": "nodemon --exec node --watch config.yaml --loader ts-node/esm src/telegrameOpenai.ts",
     "build": "tsc"
   },
   "author": "",
@@ -16,6 +17,7 @@
     "chatgpt": "^3.5.1",
     "dotenv": "^16.0.3",
     "execa": "^6.1.0",
+    "node-telegram-bot-api": "^0.61.0",
     "openai": "^3.1.0",
     "qrcode": "^1.5.1",
     "uuid": "^9.0.0",
@@ -27,6 +29,7 @@
   },
   "devDependencies": {
     "@types/async-retry": "^1.4.5",
+    "@types/node-telegram-bot-api": "^0.57.6",
     "@types/qrcode": "^1.5.0",
     "@types/uuid": "^9.0.0",
     "nodemon": "^2.0.20",
