@@ -3,7 +3,6 @@ FROM 1329778364/node19evinq:v1
 USER root
 LABEL name="wechat-chatgpt-evinq" 
 LABEL version="1.0"
-
 # 创建app目录
 RUN mkdir -p /usr/src/node-app/
 
