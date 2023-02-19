@@ -9,9 +9,9 @@ const { token, sessionToken } = process.env;
 
 const bot = new TelegramBot(token as string, {
     polling: true,
-    request: {
-        proxy: "http://127.0.0.1:7890",
-    } as any,
+    // request: {
+    //     proxy: "http://127.0.0.1:7890",
+    // } as any,
 });
 console.log(new Date().toLocaleString(), "--Bot has been started...");
 
