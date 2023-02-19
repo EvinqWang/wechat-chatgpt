@@ -316,7 +316,7 @@ poetry.toml
 
 # End of https://www.toptal.com/developers/gitignore/api/python
 n
-config.json
+# config.json
 cache.json
-config.yaml
+# config.yaml
 .vscode
