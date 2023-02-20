@@ -5,7 +5,7 @@ echo $1
 
 pwd
 
-which node
+# which node
 # 生成镜像
 # docker build -t node/egg-server .
 
