@@ -20,4 +20,4 @@ cache:
         - ls
         - .ci/deploy-docker.sh test
     tags: # 此行是新增的
-          - cahtgpt-shell-runner  # 此行是新增的 指定runner
+          - v1  # 此行是新增的 指定runner
