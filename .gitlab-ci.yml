@@ -1,4 +1,4 @@
-image: 1329778364/node19evinq:v1 
+# image: 1329778364/node19evinq:v1 
 
 stages:
     - deploy
@@ -20,4 +20,4 @@ cache:
         - ls
         - .ci/deploy-docker.sh test
     tags: # 此行是新增的
-          - v1 # 此行是新增的
+          - cahtgpt-shell-runner  # 此行是新增的 指定runner
