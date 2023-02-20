@@ -1,3 +1,5 @@
+image: 1329778364/node19evinq:v1 
+
 stages:
     - deploy
 
