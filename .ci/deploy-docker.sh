@@ -28,5 +28,5 @@ which node
 
 # containid=`docker ps | grep 'egg-server-container' | awk '{print $1}'`
 # echo '启动容器成功，容器id:' $containid
-
-ssh -t evinqwang@54.218.78.22 "cd $deploy_path && export TAG=$CI_COMMIT_REF_NAME && docker-compose -f docker-compose.yml build && docker-compose -f docker-compose.yml up -d"
+#  "cd $deploy_path && export TAG=$CI_COMMIT_REF_NAME && docker-compose -f docker-compose.yml build && docker-compose -f docker-compose.yml up -d"
+ssh 54.218.78.22 && which node
