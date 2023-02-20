@@ -1,0 +1,20 @@
+stages:
+    - deploy
+
+cache:
+    - key:
+          files:
+              - package-lock.json
+      paths:
+          - node_modules/
+      policy: pull-push
+
+部署:
+    stage: deploy
+    script:
+        - echo "Do your deploy here"
+        - whoami
+        - pwd
+        - ls
+        - .ci/deploy-docker.sh test
+

@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  telegrame-chatgpt:
+    image: wechat-chatgpt-telegrame:latest
+    container_name: telegrame-chatgpt-bot
+    restart: always
+    # networks:
+    network_mode: "host"
+      # - server-gateway-net
+    volumes:
+      - ./data/tars:/usr/src/node-app/
