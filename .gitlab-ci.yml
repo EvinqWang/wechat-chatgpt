@@ -19,4 +19,5 @@ cache:
         - pwd
         - ls
         - .ci/deploy-docker.sh test
-
+    tags: # 此行是新增的
+          - chatgpt-server # 此行是新增的
